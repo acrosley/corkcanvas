@@ -133,23 +133,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxCaption = document.getElementById('lightbox-caption');
     const closeLightbox = document.querySelector('.close-lightbox');
 
-    // Populate Gallery
     function populateGallery(filter = 'all') {
         galleryGrid.innerHTML = '';
-        const filteredData = filter === 'all' 
-            ? galleryData 
+        const filteredData = filter === 'all'
+            ? galleryData
             : galleryData.filter(item => item.category === filter);
 
         filteredData.forEach((item, index) => {
             const div = document.createElement('div');
             div.className = 'gallery-item fade-in';
             div.style.animationDelay = (index % 10) * 0.1 + 's';
-            div.innerHTML = \
-                <img src="\" alt="\" loading="lazy">
+            div.innerHTML = `
+                <img src="${item.src}" alt="${item.title}" loading="lazy">
                 <div class="gallery-overlay">
-                    <h4>\</h4>
+                    <h4>${item.title}</h4>
                 </div>
-            \;
+            `;
             div.addEventListener('click', () => openLightbox(item));
             galleryGrid.appendChild(div);
         });
