@@ -63,7 +63,10 @@
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="birthdays">Birthdays</button>
             <button class="filter-btn" data-filter="colleges">Colleges</button>
+            <button class="filter-btn" data-filter="monograms">Monograms</button>
+            <button class="filter-btn" data-filter="names">Names</button>
             <button class="filter-btn" data-filter="weddings">Weddings</button>
+            <button class="filter-btn" data-filter="custom">Custom</button>
         </div>
 
         <div class="gallery-grid" id="gallery-grid">
@@ -83,10 +86,10 @@
                 <div class="price">Base Fee: $65</div>
                 <p>+ Cost of Bottle</p>
                 <ul class="pricing-features">
-                    <li>Veuve Clicquot: $65</li>
-                    <li>LaMarca Prosecco: $20</li>
-                    <li>Other Bottles: Retail Price</li>
-                    <li>Drop-Off Option: $0</li>
+                    <li><span>Veuve Clicquot</span> <span>$65</span></li>
+                    <li><span>LaMarca Prosecco</span> <span>$20</span></li>
+                    <li><span>Other Bottles</span> <span>Retail Price</span></li>
+                    <li><span>Drop-Off Option</span> <span>$0</span></li>
                 </ul>
                 <div class="example-box">
                     <strong>Example:</strong> Painted Veuve = $130
@@ -96,9 +99,9 @@
             <div class="pricing-card glass highlight">
                 <h3>Custom Add-Ons</h3>
                 <ul class="pricing-features">
-                    <li><strong>+$10</strong> Patterns & Simple Icons</li>
-                    <li><strong>+$15</strong> Double-Sided Design</li>
-                    <li><strong>+$25</strong> Detailed Illustrations</li>
+                    <li><span>Patterns & Simple Icons</span> <span>+$10</span></li>
+                    <li><span>Double-Sided Design</span> <span>+$15</span></li>
+                    <li><span>Detailed Illustrations</span> <span>+$25</span></li>
                 </ul>
                 <p class="small-text">Pet portraits, intricate logos, and more.</p>
             </div>
@@ -106,8 +109,8 @@
             <div class="pricing-card glass">
                 <h3>Canvas Banners</h3>
                 <ul class="pricing-features">
-                    <li>White Banner (18”x45”): $50</li>
-                    <li>Brown Banner (30”x75”): $65</li>
+                    <li><span>White Banner (18”x45”)</span> <span>$50</span></li>
+                    <li><span>Brown Banner (30”x75”)</span> <span>$65</span></li>
                 </ul>
                 <div class="shipping-info">
                     <strong>Flat Rate Shipping:</strong> $25
@@ -159,6 +162,12 @@
     <footer>
         <p>&copy; 2024 Cork & Canvas Co. All rights reserved.</p>
     </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
