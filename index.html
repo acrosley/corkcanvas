@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cork & Canvas Co. | Custom Hand-Painted Bottles & Banners</title>
+    <meta name="description" content="Elevate your celebrations with custom hand-painted champagne bottles, banners, and more. Unique, personalized art for weddings, birthdays, and special occasions.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Cork & Canvas</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Order Now</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Artistry in Every <span>Bottle</span></h1>
+            <p class="fade-in-delay">Custom hand-painted champagne bottles and canvas banners for life's most celebratory moments.</p>
+            <div class="hero-btns fade-in-delay-2">
+                <a href="#gallery" class="btn btn-primary">View Gallery</a>
+                <a href="#contact" class="btn btn-secondary">Start Your Order</a>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <img src="bottles/ccc-logo-bottle.JPG" alt="Custom Painted Veuve Clicquot" class="hero-img">
+        </div>
+    </header>
+
+    <section id="gallery" class="gallery-section">
+        <div class="section-header">
+            <h2>Our Portfolio</h2>
+            <p>A glimpse into our world of personalized celebrations.</p>
+        </div>
+        
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="birthdays">Birthdays</button>
+            <button class="filter-btn" data-filter="colleges">Colleges</button>
+            <button class="filter-btn" data-filter="weddings">Weddings</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Gallery items will be injected by JS -->
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <div class="section-header">
+            <h2>Pricing & Services</h2>
+            <p>Transparent pricing for your custom masterpieces.</p>
+        </div>
+
+        <div class="pricing-container">
+            <div class="pricing-card glass">
+                <h3>Hand-Painted Bottles</h3>
+                <div class="price">Base Fee: $65</div>
+                <p>+ Cost of Bottle</p>
+                <ul class="pricing-features">
+                    <li>Veuve Clicquot: $65</li>
+                    <li>LaMarca Prosecco: $20</li>
+                    <li>Other Bottles: Retail Price</li>
+                    <li>Drop-Off Option: $0</li>
+                </ul>
+                <div class="example-box">
+                    <strong>Example:</strong> Painted Veuve = $130
+                </div>
+            </div>
+
+            <div class="pricing-card glass highlight">
+                <h3>Custom Add-Ons</h3>
+                <ul class="pricing-features">
+                    <li><strong>+$10</strong> Patterns & Simple Icons</li>
+                    <li><strong>+$15</strong> Double-Sided Design</li>
+                    <li><strong>+$25</strong> Detailed Illustrations</li>
+                </ul>
+                <p class="small-text">Pet portraits, intricate logos, and more.</p>
+            </div>
+
+            <div class="pricing-card glass">
+                <h3>Canvas Banners</h3>
+                <ul class="pricing-features">
+                    <li>White Banner (18”x45”): $50</li>
+                    <li>Brown Banner (30”x75”): $65</li>
+                </ul>
+                <div class="shipping-info">
+                    <strong>Flat Rate Shipping:</strong> $25
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container glass">
+            <div class="contact-info">
+                <h2>Ready to Celebrate?</h2>
+                <p>Standard turnaround is 2-3 weeks. Rush orders available.</p>
+                <div class="rush-fees">
+                    <h4>Rush Fees:</h4>
+                    <ul>
+                        <li>7-14 Days: +$15</li>
+                        <li>4-7 Days: +$30</li>
+                        <li>2-3 Days: +$50</li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/_cork_canvas_co._" target="_blank">Follow on Instagram</a>
+                </div>
+            </div>
+            <form class="contact-form" id="order-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="bottle">Hand-Painted Bottle</option>
+                        <option value="banner">Canvas Banner</option>
+                        <option value="other">Other Inquiry</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Tell us about your vision..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cork & Canvas Co. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

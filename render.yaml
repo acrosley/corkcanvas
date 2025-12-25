@@ -1,0 +1,6 @@
+services:
+  - type: static
+    name: cork-canvas-website
+    env: static
+    buildCommand: ""
+    publishPath: "."
