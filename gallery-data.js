@@ -1,4 +1,4 @@
-﻿const galleryData = [
+﻿window.galleryData = [
     { src: 'bottles/birthdays/birthdays-001.JPG', category: 'birthdays', title: 'Birthdays Bottle 1' },
     { src: 'bottles/birthdays/birthdays-004.JPG', category: 'birthdays', title: 'Birthdays Bottle 4' },
     { src: 'bottles/birthdays/birthdays-023.JPG', category: 'birthdays', title: 'Birthdays Bottle 23' },
