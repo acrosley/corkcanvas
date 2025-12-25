@@ -89,6 +89,31 @@ h3,
     padding: 0 4rem;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.logo a:hover .logo-img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+}
+
 .logo-text {
     font-size: 1.8rem;
     background: linear-gradient(45deg, var(--primary), var(--accent));
@@ -718,6 +743,11 @@ footer p {
         padding: 0 1.5rem;
     }
 
+    .logo-img {
+        height: 40px;
+        max-width: 160px;
+    }
+
     .logo-text {
         font-size: 1.5rem;
     }
@@ -991,6 +1021,11 @@ footer p {
 @media (max-width: 640px) {
     .nav-container {
         padding: 0 1rem;
+    }
+
+    .logo-img {
+        height: 36px;
+        max-width: 140px;
     }
 
     .logo-text {
