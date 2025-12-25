@@ -30,11 +30,11 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="order.html">Order Now</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Open menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -62,6 +62,7 @@
         <div class="gallery-filter">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="birthdays">Birthdays</button>
+            <button class="filter-btn" data-filter="businesses">Businesses</button>
             <button class="filter-btn" data-filter="colleges">Colleges</button>
             <button class="filter-btn" data-filter="monograms">Monograms</button>
             <button class="filter-btn" data-filter="names">Names</button>
@@ -169,6 +170,7 @@
         <div id="lightbox-caption"></div>
     </div>
 
+    <script src="gallery-data.js"></script>
     <script src="script.js"></script>
 </body>
 

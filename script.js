@@ -1,145 +1,65 @@
-﻿const galleryData = [
-    { src: 'bottles/birthdays/bottle (1).JPG', category: 'birthdays', title: 'Custom Bottle 1' },
-    { src: 'bottles/birthdays/bottle (10).JPG', category: 'birthdays', title: 'Custom Bottle 10' },
-    { src: 'bottles/birthdays/bottle (104).JPG', category: 'birthdays', title: 'Custom Bottle 104' },
-    { src: 'bottles/birthdays/bottle (11).JPG', category: 'birthdays', title: 'Custom Bottle 11' },
-    { src: 'bottles/birthdays/bottle (111).JPG', category: 'birthdays', title: 'Custom Bottle 111' },
-    { src: 'bottles/birthdays/bottle (115).JPG', category: 'birthdays', title: 'Custom Bottle 115' },
-    { src: 'bottles/birthdays/bottle (116).JPG', category: 'birthdays', title: 'Custom Bottle 116' },
-    { src: 'bottles/birthdays/bottle (119).JPG', category: 'birthdays', title: 'Custom Bottle 119' },
-    { src: 'bottles/birthdays/bottle (120).JPG', category: 'birthdays', title: 'Custom Bottle 120' },
-    { src: 'bottles/birthdays/bottle (123).JPG', category: 'birthdays', title: 'Custom Bottle 123' },
-    { src: 'bottles/birthdays/bottle (13).JPG', category: 'birthdays', title: 'Custom Bottle 13' },
-    { src: 'bottles/birthdays/bottle (14).JPG', category: 'birthdays', title: 'Custom Bottle 14' },
-    { src: 'bottles/birthdays/bottle (17).JPG', category: 'birthdays', title: 'Custom Bottle 17' },
-    { src: 'bottles/birthdays/bottle (20).JPG', category: 'birthdays', title: 'Custom Bottle 20' },
-    { src: 'bottles/birthdays/bottle (23).JPG', category: 'birthdays', title: 'Custom Bottle 23' },
-    { src: 'bottles/birthdays/bottle (24).JPG', category: 'birthdays', title: 'Custom Bottle 24' },
-    { src: 'bottles/birthdays/bottle (25).JPG', category: 'birthdays', title: 'Custom Bottle 25' },
-    { src: 'bottles/birthdays/bottle (27).JPG', category: 'birthdays', title: 'Custom Bottle 27' },
-    { src: 'bottles/birthdays/bottle (35).JPG', category: 'birthdays', title: 'Custom Bottle 35' },
-    { src: 'bottles/birthdays/bottle (36).JPG', category: 'birthdays', title: 'Custom Bottle 36' },
-    { src: 'bottles/birthdays/bottle (37).JPG', category: 'birthdays', title: 'Custom Bottle 37' },
-    { src: 'bottles/birthdays/bottle (38).JPG', category: 'birthdays', title: 'Custom Bottle 38' },
-    { src: 'bottles/birthdays/bottle (42).JPG', category: 'birthdays', title: 'Custom Bottle 42' },
-    { src: 'bottles/birthdays/bottle (55).JPG', category: 'birthdays', title: 'Custom Bottle 55' },
-    { src: 'bottles/birthdays/bottle (58).JPG', category: 'birthdays', title: 'Custom Bottle 58' },
-    { src: 'bottles/birthdays/bottle (6).JPG', category: 'birthdays', title: 'Custom Bottle 6' },
-    { src: 'bottles/birthdays/bottle (7).JPG', category: 'birthdays', title: 'Custom Bottle 7' },
-    { src: 'bottles/birthdays/bottle (91).JPG', category: 'birthdays', title: 'Custom Bottle 91' },
-    { src: 'bottles/birthdays/bottle (96).JPG', category: 'birthdays', title: 'Custom Bottle 96' },
-    { src: 'bottles/businesses/bottle (22).JPG', category: 'businesses', title: 'Custom Bottle 22' },
-    { src: 'bottles/businesses/bottle (66).JPG', category: 'businesses', title: 'Custom Bottle 66' },
-    { src: 'bottles/businesses/bottle (89).JPG', category: 'businesses', title: 'Custom Bottle 89' },
-    { src: 'bottles/colleges/bottle (100).JPG', category: 'colleges', title: 'Custom Bottle 100' },
-    { src: 'bottles/colleges/bottle (19).JPG', category: 'colleges', title: 'Custom Bottle 19' },
-    { src: 'bottles/colleges/bottle (2).JPG', category: 'colleges', title: 'Custom Bottle 2' },
-    { src: 'bottles/colleges/bottle (57).JPG', category: 'colleges', title: 'Custom Bottle 57' },
-    { src: 'bottles/colleges/bottle (65).JPG', category: 'colleges', title: 'Custom Bottle 65' },
-    { src: 'bottles/colleges/bottle (69).JPG', category: 'colleges', title: 'Custom Bottle 69' },
-    { src: 'bottles/colleges/bottle (70).JPG', category: 'colleges', title: 'Custom Bottle 70' },
-    { src: 'bottles/colleges/bottle (78).JPG', category: 'colleges', title: 'Custom Bottle 78' },
-    { src: 'bottles/colleges/bottle (86).JPG', category: 'colleges', title: 'Custom Bottle 86' },
-    { src: 'bottles/colleges/bottle (87).JPG', category: 'colleges', title: 'Custom Bottle 87' },
-    { src: 'bottles/colleges/bottle (88).JPG', category: 'colleges', title: 'Custom Bottle 88' },
-    { src: 'bottles/colleges/bottle (97).JPG', category: 'colleges', title: 'Custom Bottle 97' },
-    { src: 'bottles/custom/bottle (101).JPG', category: 'custom', title: 'Custom Bottle 101' },
-    { src: 'bottles/custom/bottle (106).JPG', category: 'custom', title: 'Custom Bottle 106' },
-    { src: 'bottles/custom/bottle (107).JPG', category: 'custom', title: 'Custom Bottle 107' },
-    { src: 'bottles/custom/bottle (108).JPG', category: 'custom', title: 'Custom Bottle 108' },
-    { src: 'bottles/custom/bottle (113).JPG', category: 'custom', title: 'Custom Bottle 113' },
-    { src: 'bottles/custom/bottle (118).JPG', category: 'custom', title: 'Custom Bottle 118' },
-    { src: 'bottles/custom/bottle (121).JPG', category: 'custom', title: 'Custom Bottle 121' },
-    { src: 'bottles/custom/bottle (124).JPG', category: 'custom', title: 'Custom Bottle 124' },
-    { src: 'bottles/custom/bottle (125).JPG', category: 'custom', title: 'Custom Bottle 125' },
-    { src: 'bottles/custom/bottle (28).JPG', category: 'custom', title: 'Custom Bottle 28' },
-    { src: 'bottles/custom/bottle (40).JPG', category: 'custom', title: 'Custom Bottle 40' },
-    { src: 'bottles/custom/bottle (49).JPG', category: 'custom', title: 'Custom Bottle 49' },
-    { src: 'bottles/custom/bottle (52).JPG', category: 'custom', title: 'Custom Bottle 52' },
-    { src: 'bottles/custom/bottle (61).JPG', category: 'custom', title: 'Custom Bottle 61' },
-    { src: 'bottles/custom/bottle (62).JPG', category: 'custom', title: 'Custom Bottle 62' },
-    { src: 'bottles/custom/bottle (68).JPG', category: 'custom', title: 'Custom Bottle 68' },
-    { src: 'bottles/custom/bottle (77).JPG', category: 'custom', title: 'Custom Bottle 77' },
-    { src: 'bottles/custom/bottle (90).JPG', category: 'custom', title: 'Custom Bottle 90' },
-    { src: 'bottles/custom/bottle (94).JPG', category: 'custom', title: 'Custom Bottle 94' },
-    { src: 'bottles/custom/bottle (98).JPG', category: 'custom', title: 'Custom Bottle 98' },
-    { src: 'bottles/custom/bottle (99).JPG', category: 'custom', title: 'Custom Bottle 99' },
-    { src: 'bottles/monograms/bottle (105).JPG', category: 'monograms', title: 'Custom Bottle 105' },
-    { src: 'bottles/monograms/bottle (109).JPG', category: 'monograms', title: 'Custom Bottle 109' },
-    { src: 'bottles/monograms/bottle (110).JPG', category: 'monograms', title: 'Custom Bottle 110' },
-    { src: 'bottles/monograms/bottle (112).JPG', category: 'monograms', title: 'Custom Bottle 112' },
-    { src: 'bottles/monograms/bottle (114).JPG', category: 'monograms', title: 'Custom Bottle 114' },
-    { src: 'bottles/monograms/bottle (117).JPG', category: 'monograms', title: 'Custom Bottle 117' },
-    { src: 'bottles/monograms/bottle (122).JPG', category: 'monograms', title: 'Custom Bottle 122' },
-    { src: 'bottles/monograms/bottle (15).JPG', category: 'monograms', title: 'Custom Bottle 15' },
-    { src: 'bottles/monograms/bottle (16) and birthday.JPG', category: 'monograms', title: 'Custom Bottle 16 and birthday' },
-    { src: 'bottles/monograms/bottle (21).JPG', category: 'monograms', title: 'Custom Bottle 21' },
-    { src: 'bottles/monograms/bottle (26).JPG', category: 'monograms', title: 'Custom Bottle 26' },
-    { src: 'bottles/monograms/bottle (29).JPG', category: 'monograms', title: 'Custom Bottle 29' },
-    { src: 'bottles/monograms/bottle (3).JPG', category: 'monograms', title: 'Custom Bottle 3' },
-    { src: 'bottles/monograms/bottle (30).JPG', category: 'monograms', title: 'Custom Bottle 30' },
-    { src: 'bottles/monograms/bottle (31).JPG', category: 'monograms', title: 'Custom Bottle 31' },
-    { src: 'bottles/monograms/bottle (32).JPG', category: 'monograms', title: 'Custom Bottle 32' },
-    { src: 'bottles/monograms/bottle (33).JPG', category: 'monograms', title: 'Custom Bottle 33' },
-    { src: 'bottles/monograms/bottle (34).JPG', category: 'monograms', title: 'Custom Bottle 34' },
-    { src: 'bottles/monograms/bottle (39).JPG', category: 'monograms', title: 'Custom Bottle 39' },
-    { src: 'bottles/monograms/bottle (41).JPG', category: 'monograms', title: 'Custom Bottle 41' },
-    { src: 'bottles/monograms/bottle (43).JPG', category: 'monograms', title: 'Custom Bottle 43' },
-    { src: 'bottles/monograms/bottle (44).JPG', category: 'monograms', title: 'Custom Bottle 44' },
-    { src: 'bottles/monograms/bottle (45).JPG', category: 'monograms', title: 'Custom Bottle 45' },
-    { src: 'bottles/monograms/bottle (46).JPG', category: 'monograms', title: 'Custom Bottle 46' },
-    { src: 'bottles/monograms/bottle (47).JPG', category: 'monograms', title: 'Custom Bottle 47' },
-    { src: 'bottles/monograms/bottle (5).JPG', category: 'monograms', title: 'Custom Bottle 5' },
-    { src: 'bottles/monograms/bottle (50).JPG', category: 'monograms', title: 'Custom Bottle 50' },
-    { src: 'bottles/monograms/bottle (53).JPG', category: 'monograms', title: 'Custom Bottle 53' },
-    { src: 'bottles/monograms/bottle (54).JPG', category: 'monograms', title: 'Custom Bottle 54' },
-    { src: 'bottles/monograms/bottle (64).JPG', category: 'monograms', title: 'Custom Bottle 64' },
-    { src: 'bottles/monograms/bottle (67).JPG', category: 'monograms', title: 'Custom Bottle 67' },
-    { src: 'bottles/monograms/bottle (73).JPG', category: 'monograms', title: 'Custom Bottle 73' },
-    { src: 'bottles/monograms/bottle (75).JPG', category: 'monograms', title: 'Custom Bottle 75' },
-    { src: 'bottles/monograms/bottle (76).JPG', category: 'monograms', title: 'Custom Bottle 76' },
-    { src: 'bottles/monograms/bottle (8).JPG', category: 'monograms', title: 'Custom Bottle 8' },
-    { src: 'bottles/monograms/bottle (82).JPG', category: 'monograms', title: 'Custom Bottle 82' },
-    { src: 'bottles/monograms/bottle (83).JPG', category: 'monograms', title: 'Custom Bottle 83' },
-    { src: 'bottles/monograms/bottle (84).JPG', category: 'monograms', title: 'Custom Bottle 84' },
-    { src: 'bottles/monograms/bottle (85).JPG', category: 'monograms', title: 'Custom Bottle 85' },
-    { src: 'bottles/monograms/bottle (9).JPG', category: 'monograms', title: 'Custom Bottle 9' },
-    { src: 'bottles/monograms/bottle (93).JPG', category: 'monograms', title: 'Custom Bottle 93' },
-    { src: 'bottles/names/bottle (103).JPG', category: 'names', title: 'Custom Bottle 103' },
-    { src: 'bottles/names/bottle (12).JPG', category: 'names', title: 'Custom Bottle 12' },
-    { src: 'bottles/names/bottle (18).JPG', category: 'names', title: 'Custom Bottle 18' },
-    { src: 'bottles/names/bottle (4).JPG', category: 'names', title: 'Custom Bottle 4' },
-    { src: 'bottles/names/bottle (48).JPG', category: 'names', title: 'Custom Bottle 48' },
-    { src: 'bottles/names/bottle (56).JPG', category: 'names', title: 'Custom Bottle 56' },
-    { src: 'bottles/names/bottle (59).JPG', category: 'names', title: 'Custom Bottle 59' },
-    { src: 'bottles/names/bottle (63).JPG', category: 'names', title: 'Custom Bottle 63' },
-    { src: 'bottles/names/bottle (71).JPG', category: 'names', title: 'Custom Bottle 71' },
-    { src: 'bottles/names/bottle (72).JPG', category: 'names', title: 'Custom Bottle 72' },
-    { src: 'bottles/names/bottle (74).JPG', category: 'names', title: 'Custom Bottle 74' },
-    { src: 'bottles/names/bottle (79).JPG', category: 'names', title: 'Custom Bottle 79' },
-    { src: 'bottles/names/bottle (81).JPG', category: 'names', title: 'Custom Bottle 81' },
-    { src: 'bottles/names/bottle (92).JPG', category: 'names', title: 'Custom Bottle 92' },
-    { src: 'bottles/names/bottle (95).JPG', category: 'names', title: 'Custom Bottle 95' },
-    { src: 'bottles/weddings/bottle (51).JPG', category: 'weddings', title: 'Custom Bottle 51' },
-    { src: 'bottles/weddings/bottle (60).JPG', category: 'weddings', title: 'Custom Bottle 60' },
-    { src: 'bottles/weddings/bottle (80).JPG', category: 'weddings', title: 'Custom Bottle 80' },
-    { src: 'bottles/ccc-logo-bottle.JPG', category: 'all', title: 'Signature Logo Bottle' },
-];
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     const galleryGrid = document.getElementById('gallery-grid');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const closeLightbox = document.querySelector('.close-lightbox');
+    const mobileMenuBtn = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('#main-nav .nav-links');
+
+    // Mobile menu (simple drawer)
+    function setNavOpen(isOpen) {
+        document.body.classList.toggle('nav-open', isOpen);
+        if (mobileMenuBtn) {
+            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+            mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        }
+    }
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = document.body.classList.contains('nav-open');
+            setNavOpen(!isOpen);
+        });
+
+        // Close on link click (mobile)
+        navLinks.addEventListener('click', (e) => {
+            const a = e.target.closest('a');
+            if (!a) return;
+            setNavOpen(false);
+        });
+
+        // Close on escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') setNavOpen(false);
+        });
+    }
+
+    // Guard: this script runs on multiple pages
+    if (!galleryGrid || !lightbox || !lightboxImg || !lightboxCaption || !closeLightbox) {
+        // Still keep smooth-scroll + section animations below.
+    }
+
+    let currentItems = [];
+    let currentIndex = -1;
+    const PAGE_SIZE = 24;
+    let renderedCount = 0;
 
     function populateGallery(filter = 'all') {
+        if (!galleryGrid) return;
         galleryGrid.innerHTML = '';
-        const filteredData = filter === 'all'
-            ? galleryData
-            : galleryData.filter(item => item.category === filter);
+        renderedCount = 0;
 
-        filteredData.forEach((item, index) => {
+        const filteredData = filter === 'all'
+            ? (window.galleryData || [])
+            : (window.galleryData || []).filter(item => item.category === filter);
+
+        currentItems = filteredData;
+        currentIndex = -1;
+
+        const slice = filteredData.slice(0, PAGE_SIZE);
+        slice.forEach((item, index) => {
             const div = document.createElement('div');
             div.className = 'gallery-item fade-in';
             div.style.animationDelay = (index % 10) * 0.1 + 's';
@@ -149,13 +69,53 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h4>${item.title}</h4>
                 </div>
             `;
-            div.addEventListener('click', () => openLightbox(item));
+            div.addEventListener('click', () => openLightboxByIndex(index));
             galleryGrid.appendChild(div);
         });
+
+        renderedCount = slice.length;
+
+        // "Load more" button for performance
+        if (filteredData.length > renderedCount) {
+            const loadMore = document.createElement('button');
+            loadMore.className = 'btn btn-secondary';
+            loadMore.type = 'button';
+            loadMore.style.margin = '60px auto 0';
+            loadMore.style.display = 'block';
+            loadMore.textContent = 'Load more';
+            loadMore.addEventListener('click', () => {
+                renderMore();
+                if (renderedCount >= currentItems.length) loadMore.remove();
+            });
+            galleryGrid.parentElement.appendChild(loadMore);
+        }
+    }
+
+    function renderMore() {
+        if (!galleryGrid) return;
+        const next = currentItems.slice(renderedCount, renderedCount + PAGE_SIZE);
+        next.forEach((item, i) => {
+            const index = renderedCount + i;
+            const div = document.createElement('div');
+            div.className = 'gallery-item fade-in';
+            div.style.animationDelay = (index % 10) * 0.05 + 's';
+            div.innerHTML = `
+                <img src="${item.src}" alt="${item.title}" loading="lazy">
+                <div class="gallery-overlay">
+                    <h4>${item.title}</h4>
+                </div>
+            `;
+            div.addEventListener('click', () => openLightboxByIndex(index));
+            galleryGrid.appendChild(div);
+        });
+        renderedCount += next.length;
     }
 
     // Lightbox Logic
-    function openLightbox(item) {
+    function openLightboxByIndex(index) {
+        if (!currentItems[index]) return;
+        currentIndex = index;
+        const item = currentItems[index];
         lightboxImg.src = item.src;
         lightboxCaption.textContent = item.title;
         lightbox.classList.add('active');
@@ -174,11 +134,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        } else if (e.key === 'ArrowRight') {
+            if (currentIndex >= 0) openLightboxByIndex(Math.min(currentIndex + 1, currentItems.length - 1));
+        } else if (e.key === 'ArrowLeft') {
+            if (currentIndex >= 0) openLightboxByIndex(Math.max(currentIndex - 1, 0));
+        }
+    });
+
     // Filter Logic
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            // Remove any existing "Load more" button (it lives next to gallery grid)
+            const existingLoadMore = galleryGrid?.parentElement?.querySelector('.btn.btn-secondary');
+            if (existingLoadMore && existingLoadMore.textContent?.toLowerCase().includes('load more')) {
+                existingLoadMore.remove();
+            }
             populateGallery(btn.dataset.filter);
         });
     });

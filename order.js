@@ -132,7 +132,64 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form Submission
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('Thank you! Your order inquiry has been sent. We will contact you shortly with a final quote.');
-        window.location.href = 'index.html';
+
+        // Static-site friendly submission: open a pre-filled email draft (works on Render without a backend).
+        // TODO: replace this with your real business email address.
+        const TO_EMAIL = 'corkcanvas@example.com';
+
+        const itemType = document.querySelector('input[name="item-type"]:checked')?.value || 'bottle';
+        const base = itemType === 'bottle'
+            ? document.querySelector('input[name="bottle-choice"]:checked')
+            : document.querySelector('input[name="banner-choice"]:checked');
+
+        const baseName = base?.parentElement?.querySelector('h3')?.textContent?.trim() || 'Base item';
+        const basePrice = base?.dataset?.price ? parseInt(base.dataset.price) : 0;
+
+        const addons = Array.from(document.querySelectorAll('input[name="addon"]:checked')).map((addon) => ({
+            name: addon.parentElement.querySelector('h3')?.textContent?.trim() || 'Add-on',
+            price: addon.dataset.price ? parseInt(addon.dataset.price) : 0,
+        }));
+
+        const turnaroundSelect = document.getElementById('turnaround-select');
+        const rushOption = turnaroundSelect?.options?.[turnaroundSelect.selectedIndex];
+        const rushLabel = rushOption?.textContent?.trim() || 'Standard (2-3 Weeks)';
+        const rushPrice = rushOption?.dataset?.price ? parseInt(rushOption.dataset.price) : 0;
+
+        const shippingCheckbox = document.getElementById('shipping-checkbox');
+        const shippingNeeded = Boolean(shippingCheckbox?.checked);
+        const shippingPrice = shippingNeeded ? (shippingCheckbox?.dataset?.price ? parseInt(shippingCheckbox.dataset.price) : 0) : 0;
+
+        const vision = form.querySelector('textarea[name="vision"]')?.value?.trim() || '';
+        const name = form.querySelector('input[name="name"]')?.value?.trim() || '';
+        const email = form.querySelector('input[name="email"]')?.value?.trim() || '';
+
+        const totalEstimate = basePrice
+            + addons.reduce((sum, a) => sum + a.price, 0)
+            + rushPrice
+            + shippingPrice;
+
+        const lines = [
+            'New Cork & Canvas Order Inquiry',
+            '',
+            `Name: ${name}`,
+            `Email: ${email}`,
+            '',
+            `Item Type: ${itemType}`,
+            `Base: ${baseName} ($${basePrice})`,
+            addons.length ? 'Add-ons:' : 'Add-ons: None',
+            ...addons.map(a => `- ${a.name} (+$${a.price})`),
+            `Turnaround: ${rushLabel}`,
+            rushPrice ? `Rush Fee: +$${rushPrice}` : 'Rush Fee: $0',
+            shippingNeeded ? `Shipping: Yes (+$${shippingPrice})` : 'Shipping: No',
+            '',
+            `Total Estimate: $${totalEstimate}`,
+            '',
+            'Vision / Notes:',
+            vision || '(none provided)',
+        ];
+
+        const subject = encodeURIComponent('Cork & Canvas Order Inquiry');
+        const body = encodeURIComponent(lines.join('\n'));
+        window.location.href = `mailto:${encodeURIComponent(TO_EMAIL)}?subject=${subject}&body=${body}`;
     });
 });
