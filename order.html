@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Your Masterpiece | Cork & Canvas Co.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-text">Cork & Canvas</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="order.html" class="active">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="order-page">
+        <div class="order-container glass">
+            <div class="order-header">
+                <h1>Create Your <span>Custom Order</span></h1>
+                <p>Follow the steps below to design your personalized piece.</p>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <div class="step active" data-step="1">1</div>
+                <div class="step" data-step="2">2</div>
+                <div class="step" data-step="3">3</div>
+                <div class="step" data-step="4">4</div>
+            </div>
+
+            <form id="interactive-order-form">
+                <!-- Step 1: Item Type -->
+                <div class="form-step active" id="step-1">
+                    <h2>Step 1: What are we painting?</h2>
+                    <div class="option-grid">
+                        <label class="option-card">
+                            <input type="radio" name="item-type" value="bottle" checked>
+                            <div class="card-content">
+                                <span class="icon">🍾</span>
+                                <h3>Hand-Painted Bottle</h3>
+                                <p>Champagne, Prosecco, or your own bottle.</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="item-type" value="banner">
+                            <div class="card-content">
+                                <span class="icon">🚩</span>
+                                <h3>Canvas Banner</h3>
+                                <p>Hand-painted banners for events.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 2: Specific Item -->
+                <div class="form-step" id="step-2">
+                    <h2 id="step-2-title">Step 2: Select your bottle</h2>
+                    <div id="bottle-options" class="option-grid">
+                        <label class="option-card">
+                            <input type="radio" name="bottle-choice" value="veuve" data-price="130" checked>
+                            <div class="card-content">
+                                <h3>Veuve Clicquot</h3>
+                                <p>$130 (Includes Bottle)</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="bottle-choice" value="lamarca" data-price="85">
+                            <div class="card-content">
+                                <h3>LaMarca Prosecco</h3>
+                                <p>$85 (Includes Bottle)</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="bottle-choice" value="dropoff" data-price="65">
+                            <div class="card-content">
+                                <h3>Drop-Off / Your Own</h3>
+                                <p>$65 (Painting Fee Only)</p>
+                            </div>
+                        </label>
+                    </div>
+                    <div id="banner-options" class="option-grid hidden">
+                        <label class="option-card">
+                            <input type="radio" name="banner-choice" value="white" data-price="50">
+                            <div class="card-content">
+                                <h3>White Banner</h3>
+                                <p>18” x 45” - $50</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="banner-choice" value="brown" data-price="65">
+                            <div class="card-content">
+                                <h3>Brown Banner</h3>
+                                <p>30” x 75” - $65</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 3: Add-Ons -->
+                <div class="form-step" id="step-3">
+                    <h2>Step 3: Elevate your design</h2>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="addon" value="patterns" data-price="10">
+                            <div class="card-content">
+                                <h3>Patterns & Icons</h3>
+                                <p>+$10 (Checkers, Stars, etc.)</p>
+                            </div>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="addon" value="double" data-price="15">
+                            <div class="card-content">
+                                <h3>Double-Sided</h3>
+                                <p>+$15 (Design on back)</p>
+                            </div>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="addon" value="detailed" data-price="25">
+                            <div class="card-content">
+                                <h3>Detailed Illustration</h3>
+                                <p>+$25 (Pet portraits, logos)</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 4: Details & Contact -->
+                <div class="form-step" id="step-4">
+                    <h2>Step 4: Final Details</h2>
+                    <div class="form-group">
+                        <textarea name="vision" placeholder="Describe your vision (colors, text, themes)..." rows="4"
+                            required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select name="turnaround" id="turnaround-select">
+                            <option value="standard" data-price="0">Standard (2-3 Weeks) - Free</option>
+                            <option value="rush-1" data-price="15">7-14 Days - +$15</option>
+                            <option value="rush-2" data-price="30">4-7 Days - +$30</option>
+                            <option value="rush-3" data-price="50">2-3 Days - +$50</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="shipping-toggle">
+                            <input type="checkbox" name="shipping" id="shipping-checkbox" data-price="25">
+                            <span>I need this shipped (+$25 Flat Rate)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary" id="prev-btn" disabled>Previous</button>
+                    <button type="button" class="btn btn-primary" id="next-btn">Next Step</button>
+                    <button type="submit" class="btn btn-primary hidden" id="submit-btn">Submit Order</button>
+                </div>
+            </form>
+        </div>
+
+        <aside class="order-summary glass">
+            <h3>Order Summary</h3>
+            <div class="summary-details" id="summary-details">
+                <div class="summary-item">
+                    <span>Base Item</span>
+                    <span id="summary-base-price">$0</span>
+                </div>
+                <div id="summary-addons"></div>
+                <div class="summary-item" id="summary-rush-item">
+                    <span>Rush Fee</span>
+                    <span id="summary-rush-price">$0</span>
+                </div>
+                <div class="summary-item" id="summary-shipping-item">
+                    <span>Shipping</span>
+                    <span id="summary-shipping-price">$0</span>
+                </div>
+            </div>
+            <div class="summary-total">
+                <span>Total Estimate</span>
+                <span id="total-price">$0</span>
+            </div>
+            <p class="disclaimer">* Prices are estimates. Final quote will be sent via email.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cork & Canvas Co. All rights reserved.</p>
+    </footer>
+
+    <script src="order.js"></script>
+</body>
+
+</html>
