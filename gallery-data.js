@@ -123,5 +123,5 @@
     { src: 'bottles/weddings/weddings-001.JPG', category: 'weddings', title: 'Weddings Bottle 1' },
     { src: 'bottles/weddings/weddings-002.JPG', category: 'weddings', title: 'Weddings Bottle 2' },
     { src: 'bottles/weddings/weddings-003.JPG', category: 'weddings', title: 'Weddings Bottle 3' },
-    { src: 'bottles/ccc-logo-bottle.JPG', category: 'custom', title: 'Signature Logo Bottle' },
+    { src: 'bottles/logo.jpg', category: 'custom', title: 'Signature Logo Bottle' },
 ];
