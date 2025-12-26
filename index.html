@@ -15,10 +15,10 @@
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="style.css">
+    
     <!-- Model Viewer for 3D -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
-
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -55,21 +55,17 @@
             <model-viewer 
                 src="champagne_bottle.glb" 
                 alt="Custom Painted Champagne Bottle"
-                class="hero-3d-model"
+                class="hero-img-3d"
                 camera-controls
                 auto-rotate
                 auto-rotate-delay="1000"
+                rotation-per-second="30deg"
                 interaction-policy="allow-when-focused"
                 shadow-intensity="1"
                 environment-image="neutral"
-                exposure="1"
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                ar-scale="auto"
-                loading="eager"
-                poster="bottles/logo.jpg">
-                <div slot="poster" class="hero-img-fallback">
-                    <img src="bottles/logo.jpg" alt="Custom Painted Veuve Clicquot" class="hero-img">
+                exposure="1">
+                <div slot="poster" class="hero-img-placeholder">
+                    <img src="bottles/logo.jpg" alt="Custom Painted Veuve Clicquot">
                 </div>
             </model-viewer>
         </div>

@@ -245,17 +245,27 @@ body.nav-open {
 }
 
 /* 3D Model Viewer */
-.hero-3d-model {
-    width: 100%;
-    height: 100%;
+model-viewer.hero-img-3d {
+    width: 85%;
     max-width: 500px;
-    max-height: 600px;
-    margin: 0 auto;
+    height: 600px;
     background: transparent;
-    filter: drop-shadow(30px 30px 80px rgba(0, 0, 0, 0.15));
+    --poster-color: transparent;
 }
 
-.hero-img-fallback {
+model-viewer.hero-img-3d::part(default-ar-button) {
+    background-color: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+model-viewer.hero-img-3d::part(default-ar-button):hover {
+    background-color: var(--accent);
+}
+
+.hero-img-placeholder {
     width: 100%;
     height: 100%;
     display: flex;
@@ -263,26 +273,10 @@ body.nav-open {
     justify-content: center;
 }
 
-.hero-img-fallback .hero-img {
-    width: 85%;
-    max-width: 500px;
+.hero-img-placeholder img {
+    width: 100%;
+    height: auto;
     filter: drop-shadow(30px 30px 80px rgba(0, 0, 0, 0.15));
-    animation: float 8s ease-in-out infinite;
-}
-
-/* Fallback for browsers that don't support model-viewer */
-.no-webgl .hero-3d-model {
-    display: none;
-}
-
-.no-webgl .hero-img-fallback {
-    display: flex;
-}
-
-model-viewer {
-    --poster-color: transparent;
-    --progress-bar-color: var(--primary);
-    --progress-mask: transparent;
 }
 
 @keyframes float {
@@ -817,14 +811,10 @@ footer p {
         max-width: 100%;
     }
 
-    .hero-3d-model {
+    model-viewer.hero-img-3d {
+        width: 100%;
         max-width: 100%;
-        max-height: 350px;
-    }
-
-    .hero-3d-model {
-        max-width: 100%;
-        max-height: 400px;
+        height: 400px;
     }
 
     section {
@@ -1042,6 +1032,10 @@ footer p {
     .hero h1 {
         font-size: 2rem;
         letter-spacing: -1px;
+    }
+
+    model-viewer.hero-img-3d {
+        height: 350px;
     }
 
     .hero p {
