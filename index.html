@@ -16,9 +16,6 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Model Viewer for 3D -->
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -52,22 +49,7 @@
             </div>
         </div>
         <div class="hero-image-container">
-            <model-viewer 
-                src="champagne_bottle.glb" 
-                alt="Custom Painted Champagne Bottle"
-                class="hero-img-3d"
-                camera-controls
-                auto-rotate
-                auto-rotate-delay="1000"
-                rotation-per-second="30deg"
-                interaction-policy="allow-when-focused"
-                shadow-intensity="1"
-                environment-image="neutral"
-                exposure="1">
-                <div slot="poster" class="hero-img-placeholder">
-                    <img src="bottles/logo.jpg" alt="Custom Painted Veuve Clicquot">
-                </div>
-            </model-viewer>
+            <img src="bottles/logo.jpg" alt="Custom Painted Veuve Clicquot" class="hero-img">
         </div>
     </header>
 
@@ -107,15 +89,15 @@
             <div class="pricing-card glass">
                 <h3>Hand-Painted Bottles</h3>
                 <div class="price">Base Fee: $65</div>
-                <p>+ Cost of Bottle</p>
+                <p>+ Bottle at MSRP</p>
                 <ul class="pricing-features">
-                    <li><span>Veuve Clicquot</span> <span>$65</span></li>
-                    <li><span>LaMarca Prosecco</span> <span>$20</span></li>
-                    <li><span>Other Bottles</span> <span>Retail Price</span></li>
+                    <li><span>Veuve Clicquot</span> <span>MSRP: $65</span></li>
+                    <li><span>LaMarca Prosecco</span> <span>MSRP: $20</span></li>
+                    <li><span>Other Bottles</span> <span>MSRP Varies</span></li>
                     <li><span>Drop-Off Option</span> <span>$0</span></li>
                 </ul>
                 <div class="example-box">
-                    <strong>Example:</strong> Painted Veuve = $130
+                    <strong>Example:</strong> Painted Veuve = $130 (Base $65 + MSRP $65)
                 </div>
             </div>
 
