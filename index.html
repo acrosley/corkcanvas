@@ -16,6 +16,9 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Model Viewer for 3D -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -49,7 +52,21 @@
             </div>
         </div>
         <div class="hero-image-container">
-            <img src="bottles/logo.jpg" alt="Custom Painted Veuve Clicquot" class="hero-img">
+            <model-viewer 
+                src="champagne_bottle.glb" 
+                alt="Custom Painted Champagne Bottle" 
+                class="hero-3d-model"
+                camera-controls
+                auto-rotate
+                rotation-per-second="30deg"
+                interaction-policy="allow-when-focused"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                shadow-intensity="1"
+                environment-image="neutral"
+                exposure="1.2">
+            </model-viewer>
+            <img src="bottles/logo.jpg" alt="Custom Painted Veuve Clicquot" class="hero-img hero-img-fallback">
         </div>
     </header>
 
